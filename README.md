@@ -2,6 +2,8 @@
 
 Code for the article **"A Physics-Informed CNN-LSTM for Speed and Heading-Rate Prediction from LiDAR Road Geometry toward Safe Curve Negotiation"** (submitted to *Sensors*, MDPI).
 
+Preprint: https://doi.org/10.20944/preprints202611.0570.v1
+
 Authors: Luis Miguel Zapata Alvarado, Hamurabi Gamboa Rosales, José Ismael De la Rosa Vargas
 (Universidad Autónoma de Zacatecas and Universidad Tecnológica del Estado de Zacatecas, Mexico)
 
@@ -51,7 +53,22 @@ Random seeds are fixed. Small differences in the last decimals may occur between
 
 ## Citation
 
-If you use this code, please cite the article (citation details will be added upon publication).
+If you use this code, please cite the preprint (the citation will be updated when the peer-reviewed article is published):
+
+Zapata Alvarado, L.M.; Gamboa Rosales, H.; De la Rosa Vargas, J.I. A Physics-Informed CNN-LSTM for Speed and Heading-Rate Prediction from LiDAR Road Geometry Toward Safe Curve Negotiation. *Preprints* **2026**. https://doi.org/10.20944/preprints202611.0570.v1
+
+```bibtex
+@article{202611.0570,
+  doi       = {10.20944/preprints202611.0570.v1},
+  url       = {https://doi.org/10.20944/preprints202611.0570.v1},
+  year      = 2026,
+  month     = {November},
+  publisher = {Preprints},
+  author    = {Zapata Alvarado, Luis Miguel and Gamboa Rosales, Hamurabi and De la Rosa Vargas, José Ismael},
+  title     = {A Physics-Informed CNN-LSTM for Speed and Heading-Rate Prediction from LiDAR Road Geometry Toward Safe Curve Negotiation},
+  journal   = {Preprints}
+}
+```
 
 ## License
 
