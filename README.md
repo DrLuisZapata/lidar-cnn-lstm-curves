@@ -27,10 +27,10 @@ Run the notebooks in this order: first `PandaSet_Data_Exploration.ipynb`, then `
 
 ## Data
 
-- **PandaSet**: https://scale.com/open-datasets/pandaset
-  Place the sequences in Google Drive under `/content/drive/MyDrive/pandaset/<sequence>/` (e.g., `001/lidar/00.pkl` and `001/lidar/poses.json`). Change `RUTA_PANDASET` / `PANDASET_ROOT` in the notebooks if you use another location.
-- **KITTI raw (Road category)**: https://www.cvlibs.net/datasets/kitti/raw_data.php
-  The CNN-LSTM notebook downloads drives `2011_09_26_drive_0015`, `0027`, and `0028` automatically from the official mirror.
+- **PandaSet**: https://scale.com/open-datasets/pandaset<br>
+Place the sequences in Google Drive under `/content/drive/MyDrive/pandaset/<sequence>/` (e.g., `001/lidar/00.pkl` and `001/lidar/poses.json`). Change `RUTA_PANDASET` / `PANDASET_ROOT` in the notebooks if you use another location.
+- **KITTI raw (Road category)**: https://www.cvlibs.net/datasets/kitti/raw_data.php<br>
+The CNN-LSTM notebook downloads drives `2011_09_26_drive_0015`, `0027`, and `0028` automatically from the official mirror.
 
 ## Kaggle credentials (optional)
 
