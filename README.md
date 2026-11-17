@@ -1,75 +1,71 @@
 # lidar-cnn-lstm-curves
 
-Code for the article **"A Physics-Informed CNN-LSTM for Speed and Heading-Rate Prediction from LiDAR Road Geometry toward Safe Curve Negotiation"** (submitted to *Sensors*, MDPI).
+Code, notebooks and results of the article:
 
-Preprint: https://doi.org/10.20944/preprints202611.0570.v1
+> **Short-Horizon Speed and Heading-Rate Prediction from LiDAR Road Geometry and Vehicle Dynamics: A Cross-Validated Benchmark with a Physics-Based Curve-Speed Constraint**<br>
+> Luis Miguel Zapata Alvarado, Hamurabi Gamboa Rosales, José Ismael De la Rosa Vargas<br>
+> Universidad Tecnológica del Estado de Zacatecas · Universidad Autónoma de Zacatecas<br>
+> *Sensors* (MDPI), manuscript sensors-4700056 — under review
 
-Authors: Luis Miguel Zapata Alvarado, Hamurabi Gamboa Rosales, José Ismael De la Rosa Vargas
-(Universidad Autónoma de Zacatecas and Universidad Tecnológica del Estado de Zacatecas, Mexico)
+## Summary
 
-## Overview
+The study asks whether a LiDAR preview of the road geometry improves the prediction of a vehicle's mean speed and heading rate over the next 1, 2 and 3 s, beyond the recent vehicle dynamics, and whether a physics-based curve-speed constraint (maximum speed on a banked curve) helps training.
 
-A multi-task CNN-LSTM predicts the change of the vehicle heading rate and speed over horizons of 1, 2, and 3 s from a 2 s window of features: a LiDAR-based preview of the road geometry (lateral offset of the road at 10–40 m ahead), banking, grade, speed, and heading rate. A one-sided physics-informed penalty discourages predicted speeds above the maximum cornering speed of a banked curve with friction. The model is trained on PandaSet and evaluated on held-out sequences over five sequence-wise splits and, without retraining, on KITTI raw (Road category), against a persistence baseline and an ablation without the physics term.
+- **Features:** road preview offsets at 10–40 m, road curvature, turn-relative banking and grade extracted from LiDAR, with two variants: a label-free height-band ground filter and the PandaSet semantic road labels.
+- **Predictors (identical inputs):** persistence, constant-trend extrapolation, ridge regression, MLP, LSTM, GRU, CNN-LSTM, and CNN-LSTM with a physics penalty on speeds above the banked-curve limit.
+- **Evaluation:** five-fold sequence-wise cross-validation on 39 PandaSet sequences, per-sequence Wilcoxon tests with Holm correction and bootstrap 95% CIs, input ablations, sensitivity to the friction coefficient μ and the penalty weight λ, curve-stratified errors, validation of the LiDAR geometry against the vehicle's future path, and zero-shot transfer to the 12 KITTI raw Road sequences.
+
+**Main findings:** all learned predictors improved on persistence, and lightweight models were the most accurate (at 1 s, ridge regression reduced the speed and heading-rate MSE by 79% and 38%, against 63% and 20% for the CNN-LSTM). Removing the LiDAR geometry improved accuracy, and the extracted geometry correlated weakly with the path driven. The physics term was inactive for dry-road friction and, for low friction, traded accuracy for compliance with the limit.
 
 ## Repository contents
 
-| File | Description |
+| File / folder | Content |
 |---|---|
-| `PandaSet_Data_Exploration.ipynb` | Coordinate-frame check, world-to-vehicle transform, LiDAR point-cloud visualization, vehicle speed from poses, and bird's-eye view of the road (Figures 2–4 of the article). |
-| `CNN_LSTM_PIDL_PandaSet_KITTI.ipynb` | Feature extraction for PandaSet and KITTI, CNN-LSTM with physics-informed loss, five sequence-wise splits, three horizons, persistence baseline, ablation, results tables, and result figures. |
-
-Run the notebooks in this order: first `PandaSet_Data_Exploration.ipynb`, then `CNN_LSTM_PIDL_PandaSet_KITTI.ipynb`.
-
-## Requirements
-
-- Google Colab with a GPU runtime (tested on an NVIDIA T4).
-- Python libraries available by default in Colab (NumPy, pandas, scikit-learn, TensorFlow/Keras, Matplotlib). The exploration notebook also installs Open3D.
+| `CNN_LSTM_PIDL_PandaSet_KITTI_v5_revision.ipynb` | **Main results** of the revised article: height-band geometry, 39 PandaSet sequences, KITTI zero-shot, all models, ablations, physics sensitivity, curve strata, geometry validation |
+| `CNN_LSTM_PIDL_PandaSet_KITTI_v6_semseg.ipynb` | Semantic-road variant (30 PandaSet sequences with labels), with decision criteria fixed before the run |
+| `PandaSet_Data_Exploration.ipynb` | Data exploration, coordinate check and world-to-vehicle transformation |
+| `results/v5/`, `results/v6/` | Tables (CSV) and figures (PNG/PDF) produced by the two notebooks |
+| `make_article_figures.py` | Redraws the result figures of the article from the CSV files in `results/` |
+| `make_article_diagrams.py` | Draws the methodology and validation-protocol diagrams of the article |
+| `CNN_LSTM_PIDL_PandaSet_KITTI.ipynb` | Notebook of the original submission (superseded by v5 and v6; kept for traceability) |
 
 ## Data
 
-- **PandaSet**: https://scale.com/open-datasets/pandaset<br>
-Place the sequences in Google Drive under `/content/drive/MyDrive/pandaset/<sequence>/` (e.g., `001/lidar/00.pkl` and `001/lidar/poses.json`). Change `RUTA_PANDASET` / `PANDASET_ROOT` in the notebooks if you use another location.
-- **KITTI raw (Road category)**: https://www.cvlibs.net/datasets/kitti/raw_data.php<br>
-The CNN-LSTM notebook downloads drives `2011_09_26_drive_0015`, `0027`, and `0028` automatically from the official mirror.
+- **PandaSet:** https://scale.com/open-datasets/pandaset (Kaggle mirror used in the notebooks). Expected in Google Drive at `MyDrive/pandaset/<sequence>/lidar/` (and `annotations/semseg/` for v6).
+- **KITTI raw, Road category:** https://www.cvlibs.net/datasets/kitti/raw_data.php — downloaded automatically by the v5 notebook (12 drives).
 
-## Kaggle credentials (optional)
+The datasets are not redistributed in this repository; please follow their licenses.
 
-Only needed if you download PandaSet through the Kaggle API.
+## How to run
 
-1. In Kaggle, go to **Settings → API → Create New Token**.
-2. In Colab, open the **Secrets** panel (key icon) and add `KAGGLE_USERNAME` and `KAGGLE_KEY`.
-3. Enable notebook access for both secrets.
+1. Open the notebook in Google Colab and select a GPU runtime (T4 is enough).
+2. If PandaSet is downloaded through Kaggle, add `KAGGLE_USERNAME` and `KAGGLE_KEY` in the Colab **Secrets** panel. Credentials are never written in the notebooks.
+3. Run all cells. Features and every finished fold are saved to Google Drive (`pidl_revision_v4/`, `pidl_revision_v5/`, `pidl_revision_v6/`); if Colab disconnects, run all cells again and finished folds are loaded instead of retrained.
+4. Run v5 before v6: v6 reuses the KITTI features cached by the v5 pipeline.
+5. Each notebook ends by downloading `revision_results.zip` with all tables and figures.
 
-**Never commit your `kaggle.json` file or your credentials to this repository.**
+To redraw the figures of the article from the stored results:
 
-## Outputs
-
-The CNN-LSTM notebook saves:
-
-- `results_all_splits.csv`, `results_summary_mean_std.csv`, and `results_vs_persistence.csv` (all metrics per split, mean ± std, and comparison with persistence);
-- the result figures in PDF and 300-dpi PNG in the `figures/` folder.
-
-Random seeds are fixed. Small differences in the last decimals may occur between runs because GPU training is not fully deterministic.
+```bash
+pip install pandas numpy matplotlib
+python make_article_figures.py
+python make_article_diagrams.py
+```
 
 ## Citation
 
-If you use this code, please cite the preprint (the citation will be updated when the peer-reviewed article is published):
-
-Zapata Alvarado, L.M.; Gamboa Rosales, H.; De la Rosa Vargas, J.I. A Physics-Informed CNN-LSTM for Speed and Heading-Rate Prediction from LiDAR Road Geometry Toward Safe Curve Negotiation. *Preprints* **2026**. https://doi.org/10.20944/preprints202611.0570.v1
+If you use this code, please cite the article (the reference will be updated after publication):
 
 ```bibtex
-@article{202611.0570,
-  doi       = {10.20944/preprints202611.0570.v1},
-  url       = {https://doi.org/10.20944/preprints202611.0570.v1},
-  year      = 2026,
-  month     = {November},
-  publisher = {Preprints},
-  author    = {Zapata Alvarado, Luis Miguel and Gamboa Rosales, Hamurabi and De la Rosa Vargas, José Ismael},
-  title     = {A Physics-Informed CNN-LSTM for Speed and Heading-Rate Prediction from LiDAR Road Geometry Toward Safe Curve Negotiation},
-  journal   = {Preprints}
+@article{zapata2026curves,
+  author  = {Zapata Alvarado, Luis Miguel and Gamboa Rosales, Hamurabi and De la Rosa Vargas, Jos{\'e} Ismael},
+  title   = {Short-Horizon Speed and Heading-Rate Prediction from {LiDAR} Road Geometry and Vehicle Dynamics: A Cross-Validated Benchmark with a Physics-Based Curve-Speed Constraint},
+  journal = {Sensors},
+  year    = {2026},
+  note    = {Under review}
 }
 ```
 
 ## License
 
-This project is released under the MIT License (see `LICENSE`).
+MIT License — see `LICENSE`.
