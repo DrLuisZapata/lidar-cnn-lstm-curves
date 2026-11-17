@@ -1,0 +1,85 @@
+Horizon (s),Comparison,Reference,Output,change_pct,ci_low,ci_high,seq_won,p_wilcoxon,p_holm
+1.0,Constant trend vs Persistence,Persistence,heading rate,442.70871,358.09197,547.61402,0/39,0.0,0.0
+1.0,Constant trend vs Persistence,Persistence,speed,-80.65698,-86.03873,-72.33606,36/39,0.0,0.0
+1.0,Ridge vs Persistence,Persistence,heading rate,-38.26601,-52.48768,-17.74899,32/39,3e-05,0.00013
+1.0,Ridge vs Persistence,Persistence,speed,-78.63047,-84.2537,-69.03722,34/39,0.0,0.0
+1.0,MLP vs Persistence,Persistence,heading rate,-28.97483,-38.75881,-14.60332,31/39,0.00032,0.00097
+1.0,MLP vs Persistence,Persistence,speed,-59.78592,-67.70464,-47.63282,31/39,3e-05,3e-05
+1.0,LSTM vs Persistence,Persistence,heading rate,-28.43146,-40.79735,-15.19191,34/39,0.0,0.0
+1.0,LSTM vs Persistence,Persistence,speed,-57.29887,-72.65307,-36.66758,33/39,1e-05,2e-05
+1.0,GRU vs Persistence,Persistence,heading rate,-35.28631,-45.15791,-26.24475,36/39,0.0,0.0
+1.0,GRU vs Persistence,Persistence,speed,-76.99892,-82.56122,-69.06086,35/39,0.0,0.0
+1.0,CNN-LSTM vs Persistence,Persistence,heading rate,-19.33218,-31.20189,-2.80978,24/39,0.03344,0.03344
+1.0,CNN-LSTM vs Persistence,Persistence,speed,-64.25769,-72.32466,-53.33557,32/39,0.0,1e-05
+1.0,CNN-LSTM + PIDL vs Persistence,Persistence,heading rate,-20.47441,-31.52144,-6.30357,26/39,0.01488,0.02977
+1.0,CNN-LSTM + PIDL vs Persistence,Persistence,speed,-63.35332,-71.55111,-51.60452,32/39,1e-05,2e-05
+1.0,CNN-LSTM + PIDL vs Persistence,CNN-LSTM + PIDL,heading rate,-20.47441,-31.52144,-6.30357,26/39,0.01488,0.02977
+1.0,CNN-LSTM + PIDL vs Persistence,CNN-LSTM + PIDL,speed,-63.35332,-71.55111,-51.60452,32/39,1e-05,3e-05
+1.0,CNN-LSTM + PIDL vs Constant trend,CNN-LSTM + PIDL,heading rate,-85.34654,-88.81436,-80.71057,38/39,0.0,0.0
+1.0,CNN-LSTM + PIDL vs Constant trend,CNN-LSTM + PIDL,speed,89.45692,43.88594,161.45209,5/39,0.0,0.0
+1.0,CNN-LSTM + PIDL vs Ridge,CNN-LSTM + PIDL,heading rate,28.81979,8.30574,55.8246,9/39,0.00034,0.00171
+1.0,CNN-LSTM + PIDL vs Ridge,CNN-LSTM + PIDL,speed,71.49038,36.11548,117.82308,8/39,0.0,1e-05
+1.0,CNN-LSTM + PIDL vs MLP,CNN-LSTM + PIDL,heading rate,11.96819,2.38204,20.66318,11/39,0.00519,0.02075
+1.0,CNN-LSTM + PIDL vs MLP,CNN-LSTM + PIDL,speed,-8.87101,-24.47895,8.64831,24/39,0.04285,0.12855
+1.0,CNN-LSTM + PIDL vs LSTM,CNN-LSTM + PIDL,heading rate,11.11809,-4.23992,31.73215,11/39,0.00819,0.02457
+1.0,CNN-LSTM + PIDL vs LSTM,CNN-LSTM + PIDL,speed,-14.17866,-34.34706,18.56154,14/39,0.24695,0.4939
+1.0,CNN-LSTM + PIDL vs GRU,CNN-LSTM + PIDL,heading rate,22.88836,8.62056,43.61812,8/39,8e-05,0.00047
+1.0,CNN-LSTM + PIDL vs GRU,CNN-LSTM + PIDL,speed,59.32594,33.82326,88.26716,6/39,0.0,1e-05
+1.0,CNN-LSTM + PIDL vs CNN-LSTM,CNN-LSTM + PIDL,heading rate,-1.41596,-4.86143,2.2456,15/39,0.73527,0.73527
+1.0,CNN-LSTM + PIDL vs CNN-LSTM,CNN-LSTM + PIDL,speed,2.53027,-1.28738,7.65515,19/39,0.4185,0.4939
+2.0,Constant trend vs Persistence,Persistence,heading rate,1172.16384,802.29939,1563.09755,0/39,0.0,0.0
+2.0,Constant trend vs Persistence,Persistence,speed,-67.53341,-77.49794,-50.42375,30/39,2e-05,0.00012
+2.0,Ridge vs Persistence,Persistence,heading rate,-47.92118,-55.17214,-37.41645,32/39,0.0,0.0
+2.0,Ridge vs Persistence,Persistence,speed,-67.88204,-76.69051,-53.35209,26/39,0.00017,0.00101
+2.0,MLP vs Persistence,Persistence,heading rate,-34.19216,-41.34024,-23.18714,31/39,4e-05,0.00014
+2.0,MLP vs Persistence,Persistence,speed,-47.75566,-60.20402,-29.59505,24/39,0.01159,0.04636
+2.0,LSTM vs Persistence,Persistence,heading rate,-31.21178,-42.79804,-12.8015,28/39,0.00409,0.01226
+2.0,LSTM vs Persistence,Persistence,speed,-46.79333,-63.99277,-22.95462,21/39,0.0661,0.16854
+2.0,GRU vs Persistence,Persistence,heading rate,-41.00339,-51.91179,-26.36664,31/39,1e-05,4e-05
+2.0,GRU vs Persistence,Persistence,speed,-65.59421,-75.39857,-49.22618,28/39,0.00021,0.00103
+2.0,CNN-LSTM vs Persistence,Persistence,heading rate,-24.96223,-39.33176,-3.78064,22/39,0.25857,0.4939
+2.0,CNN-LSTM vs Persistence,Persistence,speed,-44.79052,-60.49817,-19.73503,22/39,0.05618,0.16854
+2.0,CNN-LSTM + PIDL vs Persistence,Persistence,heading rate,-22.93441,-38.39773,1.39159,21/39,0.24695,0.4939
+2.0,CNN-LSTM + PIDL vs Persistence,Persistence,speed,-44.81255,-59.92209,-20.67455,24/39,0.05806,0.16854
+2.0,CNN-LSTM + PIDL vs Persistence,CNN-LSTM + PIDL,heading rate,-22.93441,-38.39773,1.39159,21/39,0.24695,0.4939
+2.0,CNN-LSTM + PIDL vs Persistence,CNN-LSTM + PIDL,speed,-44.81255,-59.92209,-20.67455,24/39,0.05806,0.23224
+2.0,CNN-LSTM + PIDL vs Constant trend,CNN-LSTM + PIDL,heading rate,-93.94216,-95.52962,-91.54539,38/39,0.0,0.0
+2.0,CNN-LSTM + PIDL vs Constant trend,CNN-LSTM + PIDL,speed,69.98227,15.19074,160.541,13/39,0.00625,0.03123
+2.0,CNN-LSTM + PIDL vs Ridge,CNN-LSTM + PIDL,heading rate,47.97876,25.47852,82.82134,8/39,2e-05,0.0001
+2.0,CNN-LSTM + PIDL vs Ridge,CNN-LSTM + PIDL,speed,71.8274,26.09239,131.78118,12/39,0.00202,0.01212
+2.0,CNN-LSTM + PIDL vs MLP,CNN-LSTM + PIDL,heading rate,17.10701,-4.39457,41.77989,15/39,0.10757,0.32271
+2.0,CNN-LSTM + PIDL vs MLP,CNN-LSTM + PIDL,speed,5.63335,-11.42135,24.57267,18/39,0.77726,1.0
+2.0,CNN-LSTM + PIDL vs LSTM,CNN-LSTM + PIDL,heading rate,12.03313,-4.42399,30.15828,12/39,0.05999,0.23996
+2.0,CNN-LSTM + PIDL vs LSTM,CNN-LSTM + PIDL,speed,3.7228,-14.86667,31.84352,22/39,0.89573,1.0
+2.0,CNN-LSTM + PIDL vs GRU,CNN-LSTM + PIDL,heading rate,30.62716,11.32065,57.87707,10/39,0.00089,0.00445
+2.0,CNN-LSTM + PIDL vs GRU,CNN-LSTM + PIDL,speed,60.40163,26.54127,101.55199,12/39,0.00147,0.01028
+2.0,CNN-LSTM + PIDL vs CNN-LSTM,CNN-LSTM + PIDL,heading rate,2.7024,-3.55403,10.68443,21/39,0.9945,0.9945
+2.0,CNN-LSTM + PIDL vs CNN-LSTM,CNN-LSTM + PIDL,speed,-0.0399,-5.6033,7.42673,26/39,0.36472,1.0
+3.0,Constant trend vs Persistence,Persistence,heading rate,1872.08936,1027.60176,3096.53012,0/39,0.0,0.0
+3.0,Constant trend vs Persistence,Persistence,speed,-56.49309,-68.65754,-33.95665,21/39,0.08485,0.32919
+3.0,Ridge vs Persistence,Persistence,heading rate,-60.17961,-74.51534,-39.28842,34/39,0.0,0.0
+3.0,Ridge vs Persistence,Persistence,speed,-63.62627,-74.437,-43.38283,24/39,0.00495,0.02969
+3.0,MLP vs Persistence,Persistence,heading rate,-27.00419,-39.62858,-18.45042,35/39,0.0,1e-05
+3.0,MLP vs Persistence,Persistence,speed,-43.12033,-57.64379,-21.61341,22/39,0.02997,0.14983
+3.0,LSTM vs Persistence,Persistence,heading rate,-42.48586,-57.91182,-17.90032,27/39,0.00289,0.00868
+3.0,LSTM vs Persistence,Persistence,speed,-44.13892,-63.72324,-15.74378,19/39,0.28921,0.32919
+3.0,GRU vs Persistence,Persistence,heading rate,-43.85771,-57.46645,-19.7873,30/39,0.0005,0.00198
+3.0,GRU vs Persistence,Persistence,speed,-64.43096,-75.49626,-45.81909,25/39,0.001,0.00698
+3.0,CNN-LSTM vs Persistence,Persistence,heading rate,-4.85389,-12.33855,6.73888,23/39,0.39491,0.78983
+3.0,CNN-LSTM vs Persistence,Persistence,speed,-47.79279,-65.3675,-19.5519,23/39,0.0823,0.32919
+3.0,CNN-LSTM + PIDL vs Persistence,Persistence,heading rate,-5.09358,-12.72486,6.69559,22/39,0.41055,0.78983
+3.0,CNN-LSTM + PIDL vs Persistence,Persistence,speed,-47.65325,-65.20769,-19.18042,23/39,0.09014,0.32919
+3.0,CNN-LSTM + PIDL vs Persistence,CNN-LSTM + PIDL,heading rate,-5.09358,-12.72486,6.69559,22/39,0.41055,0.8211
+3.0,CNN-LSTM + PIDL vs Persistence,CNN-LSTM + PIDL,speed,-47.65325,-65.20769,-19.18042,23/39,0.09014,0.59395
+3.0,CNN-LSTM + PIDL vs Constant trend,CNN-LSTM + PIDL,heading rate,-95.18752,-96.99375,-91.92651,38/39,0.0,0.0
+3.0,CNN-LSTM + PIDL vs Constant trend,CNN-LSTM + PIDL,speed,20.31823,-19.1067,82.89649,22/39,0.7457,1.0
+3.0,CNN-LSTM + PIDL vs Ridge,CNN-LSTM + PIDL,heading rate,138.33626,62.87431,250.14822,6/39,0.0,1e-05
+3.0,CNN-LSTM + PIDL vs Ridge,CNN-LSTM + PIDL,speed,43.91363,2.39891,98.29414,14/39,0.08485,0.59395
+3.0,CNN-LSTM + PIDL vs MLP,CNN-LSTM + PIDL,heading rate,30.01625,11.18702,65.90374,9/39,0.00027,0.00133
+3.0,CNN-LSTM + PIDL vs MLP,CNN-LSTM + PIDL,speed,-7.96932,-30.3739,18.63472,25/39,0.16248,0.64992
+3.0,CNN-LSTM + PIDL vs LSTM,CNN-LSTM + PIDL,heading rate,65.01407,22.08502,114.3582,13/39,0.00155,0.0062
+3.0,CNN-LSTM + PIDL vs LSTM,CNN-LSTM + PIDL,speed,-6.2912,-23.19217,14.7899,23/39,0.20407,0.64992
+3.0,CNN-LSTM + PIDL vs GRU,CNN-LSTM + PIDL,heading rate,69.04621,23.47767,113.92008,12/39,0.0045,0.0135
+3.0,CNN-LSTM + PIDL vs GRU,CNN-LSTM + PIDL,speed,47.16942,11.59991,82.1821,19/39,0.09288,0.59395
+3.0,CNN-LSTM + PIDL vs CNN-LSTM,CNN-LSTM + PIDL,heading rate,-0.25192,-0.50318,0.05673,19/39,0.72488,0.8211
+3.0,CNN-LSTM + PIDL vs CNN-LSTM,CNN-LSTM + PIDL,speed,0.26728,-0.33727,1.28453,20/39,0.55716,1.0
