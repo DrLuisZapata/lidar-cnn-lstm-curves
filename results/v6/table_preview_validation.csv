@@ -1,0 +1,16 @@
+Dataset,Distance (m),N frames,r offset,MAE offset (m),r shape,MAE shape (m)
+PandaSet (semantic road),10,2021,-0.0074,1.3797,,
+PandaSet (semantic road),20,1664,-0.02,2.1366,0.0703,1.4263
+PandaSet (semantic road),30,1305,0.1955,2.226,0.2951,1.9098
+PandaSet (semantic road),40,984,0.5098,2.2981,0.5494,2.0792
+PandaSet (semantic road),curvature,1480,0.1454,,,
+PandaSet (height band),10,1793,-0.0384,0.7886,,
+PandaSet (height band),20,1504,-0.097,1.9279,-0.0476,1.78
+PandaSet (height band),30,1152,0.1308,2.6636,0.1812,2.8391
+PandaSet (height band),40,811,0.1061,2.9911,0.2968,2.8369
+PandaSet (height band),curvature,1480,-0.1116,,,
+KITTI (height band),10,5507,0.0815,2.0687,,
+KITTI (height band),20,5351,0.2472,3.0879,0.2765,1.8624
+KITTI (height band),30,4782,0.2478,4.1841,0.2691,3.1246
+KITTI (height band),40,3682,0.1615,5.1827,0.1802,4.2568
+KITTI (height band),curvature,5228,-0.1002,,,

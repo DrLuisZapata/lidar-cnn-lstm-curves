@@ -1,0 +1,7 @@
+Variable,PandaSet mean,PandaSet std,KITTI mean,KITTI std,KS D,KS p
+Speed (km/h),33.3245,11.4249,50.0527,23.8461,0.519,0.0
+|Heading rate| (deg/s),0.6707,0.686,1.9935,4.724,0.1275,0.0
+Preview offset at 20 m (m),0.6113,2.4751,0.6521,4.1058,0.1309,0.0
+Preview offset at 40 m (m),1.1747,2.9739,0.583,7.0739,0.2355,0.0
+Turn-relative banking (deg),-0.032,0.899,-0.0347,0.6214,0.1443,0.0
+Grade (%),0.2118,6.2786,0.363,0.3401,0.442,0.0

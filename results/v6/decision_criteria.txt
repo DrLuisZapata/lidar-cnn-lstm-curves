@@ -1,0 +1,1 @@
+r30=0.295 r40=0.549 crit1=False crit2=False
